@@ -7,7 +7,9 @@ router.get("/", async (req, res) => {
   try {
     const note = await prisma.notes.findMany();
     res.status(200).json({ note });
-  } catch (error) {}
+  } catch (error) {
+    console.log("first")
+  }
 });
 
 router.post("/", async (req, res) => {
